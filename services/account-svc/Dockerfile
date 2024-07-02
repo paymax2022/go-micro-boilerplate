@@ -7,7 +7,7 @@ FROM go-micro-boilerplate-base:1.15-stretch-0 as builder
 RUN CGO_ENABLED=0 GOOS=linux go install ./services/account-svc/cmd/account-svc
 
 # Stage 2: Prepare all required data to run the service.
-FROM alpine:3.9
+FROM alpine:3
 
 # Install ca-certificates, bash
 RUN apk -v --update add ca-certificates bash
